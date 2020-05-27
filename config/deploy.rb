@@ -48,6 +48,7 @@ set :application,     'deploytest'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :puma_role, :app
 
 # deploy.rb or stage file (staging.rb, production.rb or else)
 set :rvm_type, :user                     # Defaults to: :auto
