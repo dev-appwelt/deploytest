@@ -48,8 +48,11 @@ set :application,     'deploytest'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set :default_shell, "/bin/bash -l"
-set :rvm_type, :user
+
+# deploy.rb or stage file (staging.rb, production.rb or else)
+set :rvm_type, :user                     # Defaults to: :auto
+set :rvm_ruby_version, '2.6.5'      # Defaults to: 'default'
+set :rvm_custom_path, '/usr/share/rvm/'  # only needed if not detected
 
 # Don't change these unless you know what you're doing
 set :pty,             true
