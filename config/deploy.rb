@@ -48,6 +48,8 @@ set :application,     'deploytest'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :default_shell, "/bin/bash -l"
+set :rvm_type, :user
 
 # Don't change these unless you know what you're doing
 set :pty,             true
