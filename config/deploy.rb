@@ -57,7 +57,7 @@ set :rvm_custom_path, '/usr/share/rvm/'  # only needed if not detected
 
 # Don't change these unless you know what you're doing
 set :pty,             true
-set :use_sudo,        false
+set :use_sudo,        true
 set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/var/www/deployment/#{fetch(:application)}"
