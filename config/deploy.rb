@@ -46,6 +46,8 @@ server '167.71.232.212', port: 22, roles: [:web, :app, :db], primary: true
 set :repo_url,        'git@github.com:dev-appwelt/deploytest.git'
 set :application,     'deploytest'
 set :user,            'deploy'
+set :group, 		  'sudo'
+set :runner, 		  'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 set :puma_role, :app
