@@ -58,7 +58,7 @@ set :rvm_custom_path, '/usr/share/rvm/'  # only needed if not detected
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        true
-set :stage,           :development
+set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/var/www/deployment/#{fetch(:application)}"
 # set :puma_bind,       %w(tcp://0.0.0.0:3000 unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock)
@@ -125,7 +125,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :restart
+#  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid
