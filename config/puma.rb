@@ -44,3 +44,14 @@ plugin :tmp_restart
 # pidfile "#{shared_dir}/pids/puma.pid"
 # state_path "#{shared_dir}/pids/puma.state"
 # activate_control_app
+
+
+pidfile "/var/www/deployment/deploytest/shared/tmp/pids/puma.pid"
+state_path "/var/www/deployment/deploytest/shared/tmp/pids/puma.state"
+stdout_redirect '/var/www/deployment/deploytest/current/log/puma.error.log', '/var/www/deployment/deploytest/current/log/puma.access.log', true
+
+bind 'unix:///var/www/deployment/deploytest/shared/tmp/sockets/deploytest-puma.sock'
+
+workers 1
+
+activate_control_app
