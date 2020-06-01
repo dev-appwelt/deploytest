@@ -9,7 +9,7 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port        ENV.fetch("PORT") { 80 }
+port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
@@ -34,13 +34,13 @@ environment ENV.fetch("RAILS_ENV") { "production" }
 plugin :tmp_restart
 
 
-# Set up socket location
-bind "unix:///var/www/deployment/deploytest/shared/tmp/sockets/deployment-puma.sock"
+# # Set up socket location
+# bind "unix:///var/www/deployment/deploytest/shared/tmp/sockets/deployment-puma.sock"
 
-# Logging
-stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+# # Logging
+# stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
 
-# Set master PID and state locations
-pidfile "#{shared_dir}/pids/puma.pid"
-state_path "#{shared_dir}/pids/puma.state"
-activate_control_app
+# # Set master PID and state locations
+# pidfile "#{shared_dir}/pids/puma.pid"
+# state_path "#{shared_dir}/pids/puma.state"
+# activate_control_app
